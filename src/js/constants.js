@@ -1,0 +1,1 @@
+export const API_ENDPOINT = "http://api.kano.me/share?limit=100";

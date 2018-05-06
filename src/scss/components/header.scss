@@ -1,0 +1,48 @@
+$module: "header";
+
+.#{$module} {
+	padding: em(20) em(30);
+	margin-bottom: em(100);
+	background-color: $color1;
+	color: white;
+	text-align: center;
+
+	&--article {
+		@extend .#{$module};
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__title {
+		margin-bottom: rem(70);
+		font-weight: 700;
+	}
+
+	&__logo {
+		margin-bottom: em(50);
+		display: inline-block;
+
+		.#{$module}--article & {
+			margin: 0 auto;
+		}
+	}
+
+	&__go-back {
+		justify-self: flex-start;
+	}
+
+	&__go-back-arrow {
+		transform: rotate(180deg);
+		position: relative;
+		top: em(-2);
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: em(5);		
+
+		path {
+			fill: white;
+		}		
+	}
+}
