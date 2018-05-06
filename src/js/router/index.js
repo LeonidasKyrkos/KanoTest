@@ -6,7 +6,7 @@ import Gallery from "@components/Gallery/Gallery";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
 	mode: "history",
 	routes: [
 		{
@@ -21,3 +21,9 @@ export default new Router({
 		},
 	],
 });
+
+router.afterEach((to, from) => {
+	window.scrollTo(0, 0);
+});
+
+export default router;
