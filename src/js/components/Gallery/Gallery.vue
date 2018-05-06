@@ -9,8 +9,8 @@
 		<span class="alpha" v-if="searchString.length && entries.length === 0">No results found. Please try another search</span>
 		<div class="gallery__sorting">
 			<button class="gallery__tab" :class="{ active: sortEntries === defaultSort }" @click="sortEntries = defaultSort">Time</button>
-			<button class="gallery__tab" @click="sortEntries = likesSort">Likes</button>
-			<button class="gallery__tab" @click="sortEntries = titleSort">Title</button>
+			<button class="gallery__tab" :class="{ active: sortEntries === likesSort }" @click="sortEntries = likesSort">Likes</button>
+			<button class="gallery__tab" :class="{ active: sortEntries === titleSort }" @click="sortEntries = titleSort">Title</button>
 		</div>
 		<ul class="gallery">
 			<li v-for="entry in entries" :key="entry.id" class="gallery__item-wrap">
@@ -154,6 +154,7 @@ $module: "gallery";
 		border-bottom: 1px solid transparent;
 		text-transform: uppercase;
 		background-color: transparent;
+		outline: 0;
 
 		&.active {
 			border-bottom: 1px solid $color5;
